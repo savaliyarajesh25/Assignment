@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Automation Test Suite" parallel="tests" thread-count="2" data-provider-thread-count="2">
+	<listeners>
+		<listener class-name="com.rajesh.listeners.AnnotationTransformer"></listener>
+		<listener class-name="com.rajesh.listeners.ListenerClass"></listener>
+		<listener class-name="com.rajesh.listeners.MethodInterceptor"></listener>
+	</listeners>
+	<test thread-count="1" name="Regression Tests execution over Chrome
+		Browser" parallel="methods">
+		<parameter name="browser" value="CHROME"></parameter>
+		<classes>
+			<class name="com.rajesh.assignment.amazon.AmazonTest"></class>
+		</classes>
+	</test>
+</suite>
